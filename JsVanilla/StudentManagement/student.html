@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+
+    <div class='home-main'>
+        <div class='header'>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">PTIT Academy</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto management-link">
+                        <li class="nav-item active children-link">
+                            <a class="nav-link" href="#"> Sinh viên<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item children-link">
+                            <a class="nav-link" href="#">Giáo Viên</a>
+                        </li>
+                        <li class="nav-item children-link">
+                            <a class="nav-link" href="#">Thông Tin Chung</a>
+                        </li>
+                    </ul>
+                    <div class = 'logined'>
+                        <p class = 'say-welcome' >Hello Admin , Wellcome Back!</p>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class='body container'>
+            <div class='search-field'>
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="myInput" class="form-control mr-sm-2" type="search" onkeyup="myFunction()" placeholder="Search Student" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm Kiếm</button>
+                </form>
+            </div>
+            <div class='student-list'>
+                <h3>Danh Sách Sinh Viên</h3>
+                <div class='table-student'>
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th>Tên Sinh Viên</th>
+                                <th>Mã Sinh Viên</th>
+                                <th>Lớp</th>
+                                <th>KPA</th>
+                            </tr>
+                        </thead>
+                        <tbody class='list-student id="myUL"'>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="button-management">
+                <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseExample"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    Thêm Sinh Viên
+                </button>
+                <div class="collapse" id="collapseExample">
+                    <form>
+                        <div class="form-group">
+                            <label for="nameStudent">Tên Sinh Viên : </label>
+                            <input type="text" class="form-control" id="nameStudent" placeholder="Nhập Tên : ">
+                        </div>
+                        <div class="form-group">
+                            <label for="cardStudent">Mã Sinh Viên : </label>
+                            <input type="text" class="form-control" id="cardStudent" placeholder="Nhập Mã Sinh Viên : ">
+                        </div>
+                        <div class="form-group">
+                            <label for="class">Lớp : </label>
+                            <input type="text" class="form-control" id="class" placeholder="Nhập Lớp : ">
+                        </div>
+                        <div class="form-group">
+                            <label for="kpa">Điểm Kpa : </label>
+                            <input type="text" class="form-control" id="kpa" placeholder="Nhập Điểm : ">
+                        </div>
+                        <div type="submit" class="btn btn-secondary btn-add-student">Submit</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=footer>
+        <div class="container footer-end">
+            <div class='row'>
+                <div class='col-6 '>
+                    <p>Trụ sở chính : </p>
+                    <p>
+                        122 Hoàng Quốc Việt, Q.Cầu Giấy, Hà Nội.
+                    </p>
+                    <br />
+                    <p>Cơ sở đào tạo :</p>
+                    <p>
+                        Km10, Đường Nguyễn Trãi, Q.Hà Đông, Hà Nội</p>
+                </div>
+                <div class='col-6 '>
+                    <p>Học viện cơ sở tại TP. Hồ Chí Minh :</p>
+                    <p>
+                        11 Nguyễn Đình Chiểu, P. Đa Kao, Q.1 TP Hồ Chí Minh</p>
+                    <br>
+                    <p>
+                        Cơ sở đào tạo tại TP Hồ Chí Minh :</p>
+                    <p>
+                        Đường Man Thiện, P. Hiệp Phú, Q.9 TP Hồ Chí Minh</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
