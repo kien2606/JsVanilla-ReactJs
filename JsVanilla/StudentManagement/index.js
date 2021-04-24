@@ -19,11 +19,15 @@ var listStudent = [
     kpa: 4.2,
   },
 ];
+
+//kiểm tra từ localStorage
 if (window.localStorage.data) {
   listStudent = JSON.parse(window.localStorage.data);
 } else {
   window.localStorage.setItem("data", JSON.stringify(listStudent));
 }
+
+// lay dự liệu nhúng vào table
 
 let wrapListStudent = document.querySelector(".list-student");
 function handlePage(students) {
@@ -34,10 +38,15 @@ function handlePage(students) {
       <td>${item.studentCard}</td>
       <td>${item.classStudent}</td>
       <td>${item.kpa}</td>
+      <td>
+        <div type="submit" class="btn btn-secondary btn-delete-student">Xóa</div>
+      </td>
   </tr>`;
   });
 }
 wrapListStudent.innerHTML = handlePage(listStudent).join("");
+
+//add student
 
 const addStudent = (e) => {
   let name = document.querySelector("#nameStudent");
@@ -61,6 +70,8 @@ const addStudent = (e) => {
 const addStudentBtn = document.querySelector(".btn-add-student");
 addStudentBtn.addEventListener("click", addStudent);
 
+//search student
+
 function myFunction() {
   let input = document.getElementById("myInput").value;
   let list = JSON.parse(window.localStorage.data);
@@ -81,3 +92,22 @@ function myFunction() {
   });
   wrapListStudent.innerHTML = result.join("");
 }
+
+// delete student
+
+const deleteStudent = document.querySelectorAll(".btn-delete-student");
+
+deleteStudent.forEach((element,index) => {
+  element.addEventListener("click", () => {
+    console.log(listStudent);
+    
+
+    let newValue = [
+      ...listStudent.slice(0 , index),
+      ...listStudent.slice(index+1)
+    ];
+    
+    localStorage.setItem("data", JSON.stringify(newValue));
+
+  });
+});

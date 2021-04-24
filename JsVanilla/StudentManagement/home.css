@@ -72,3 +72,11 @@
 .say-welcome{
     margin: 0;
 }
+.img-news{
+    width: 100%;
+}
+.title-news{
+    font-size: 20px;
+    color: red;
+    font-weight: 400;
+}
