@@ -44,8 +44,12 @@ function handlePage(students) {
   </tr>`;
   });
 }
-wrapListStudent.innerHTML = handlePage(listStudent).join("");
 
+//function handle render load
+function reRender(students) {
+  wrapListStudent.innerHTML = handlePage(students).join("");
+}
+reRender(listStudent);
 //add student
 
 const addStudent = (e) => {
@@ -61,16 +65,15 @@ const addStudent = (e) => {
   };
 
   let existing = JSON.parse(localStorage.getItem("data"));
-
   existing.push(newStudent);
-
   localStorage.setItem("data", JSON.stringify(existing));
+  reRender(existing);
 };
 
 const addStudentBtn = document.querySelector(".btn-add-student");
 addStudentBtn.addEventListener("click", addStudent);
 
-//search student
+//search name student 
 
 function myFunction() {
   let input = document.getElementById("myInput").value;
@@ -91,23 +94,24 @@ function myFunction() {
   </tr>`;
   });
   wrapListStudent.innerHTML = result.join("");
+
 }
 
 // delete student
 
 const deleteStudent = document.querySelectorAll(".btn-delete-student");
 
-deleteStudent.forEach((element,index) => {
+deleteStudent.forEach((element, index) => {
   element.addEventListener("click", () => {
     console.log(listStudent);
-    
 
     let newValue = [
-      ...listStudent.slice(0 , index),
-      ...listStudent.slice(index+1)
+      ...listStudent.slice(0, index),
+      ...listStudent.slice(index + 1),
     ];
-    
+
     localStorage.setItem("data", JSON.stringify(newValue));
+    reRender(newValue);
 
   });
 });
