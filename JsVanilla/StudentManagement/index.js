@@ -61,4 +61,23 @@ const addStudent = (e) => {
 const addStudentBtn = document.querySelector(".btn-add-student");
 addStudentBtn.addEventListener("click", addStudent);
 
-
+function myFunction() {
+  let input = document.getElementById("myInput").value;
+  let list = JSON.parse(window.localStorage.data);
+  let filterValue = list.filter((value) => {
+    if (input == "") {
+      return list;
+    } else if (value.name.toLowerCase().includes(input.toLowerCase())) {
+      return value;
+    }
+  });
+  let result = filterValue.map((item) => {
+    return ` <tr>
+      <td>${item.name}</td>
+      <td>${item.studentCard}</td>
+      <td>${item.classStudent}</td>
+      <td>${item.kpa}</td>
+  </tr>`;
+  });
+  wrapListStudent.innerHTML = result.join("");
+}
