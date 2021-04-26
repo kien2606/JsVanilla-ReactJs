@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.form-otp {
+    width: 400px;
+    height: 530px;
+    margin-top: 50px;
+    border: 0.5px solid gray;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.title-header {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 400;
+    color: #fe7d93;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+i.fa.fa-heart {
+    align-self: center;
+    padding: 8px;
+}
+
+p.alert-text {
+    text-transform: capitalize;
+    margin: 15px 20px;
+    font-weight: 500;
+}
+
+.opt-form {
+    display: flex;
+    justify-content: space-around;
+    width: 94%;
+    height: 40px;
+    margin: 0 auto;
+}
+
+input.phone-number {
+    width: 60%;
+    height: 100%;
+    border-radius: 5px;
+    font-size: 23px;
+    padding-left: 10px;
+}
+
+.phone-number:focus {
+    outline: none;
+}
+
+.group-number {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-auto-columns: auto;
+    grid-auto-rows: auto;
+    grid-column-gap: 10px;
+    grid-row-gap: 13px;
+    margin-top: 20px;
+}
+
+button.number {
+    width: 90px;
+    height: 40px;
+    justify-self: center;
+    border-radius: 10px;
+}
+
+button.number:hover {
+    background-color: rgb(241, 226, 226);
+}
+
+button.number0.number {
+    grid-column-start: 2;
+}
+
+.group-otp {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-columns: auto;
+    grid-auto-rows: auto;
+    grid-template-rows-val: 1fr 1fr 1fr 1fr;
+    margin: 30px 0;
+}
+
+input.otp-code {
+    width: 40px;
+    height: 35px;
+    justify-self: center;
+    padding: 13px;
+}
+
+.btn-verify {
+    margin: 0 auto;
+    width: 93%;
+    color: black;
+    background-color: yellow;
+    border-radius: 7px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.resend-otp {
+    border: none;
+    background-color: transparent;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: red;
+}
+
+.resend-otp:hover {
+    text-decoration: underline;
+}
+
+.resend-code-otp {
+    width: 92%;
+    margin: 10px auto;
+}

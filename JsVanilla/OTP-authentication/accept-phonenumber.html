@@ -20,13 +20,20 @@
                 <i class="fa fa-heart"></i>
             </div>
             <div class="form-text">
-                <p class='alert-text'> thực hiện giao dịch của bạn đến tài khoản kienvm266 , số tiền 30000$</p>
-                <p class='alert-text'>hãy nhập chính xác số điện thoại của bạn để nhận mã OTP hợp lệ cho giao dịch này
+                <p class='alert-text'> </p>
+                <p class='alert-text timeout-otpcode'>
                 </p>
             </div>
-            <div class='opt-form'>
-                <input type="text" name='otp-code' class = 'phone-number' autofocus maxlength="10">
-                <button type="button" class="btn btn-secondary submit-phone">Nhận Mã OTP</button>
+            <div class="group-otp">
+                <input type="text" class= 'otp-code' maxlength=1 autofocus  >
+                <input type="text" class= 'otp-code' maxlength=1 >
+                <input type="text" class= 'otp-code' maxlength=1 >
+                <input type="text" class= 'otp-code' maxlength=1 >
+            </div>
+            <button class = 'btn  btn-block btn-verify'>verify now --></button>
+            <div class="resend-code-otp">
+                Bạn chưa nhận được mã OTP ? 
+                <button class = 'resend-otp'>thử lại</button>
             </div>
             <div class="group-number">
                 <button class='number number1'>1</button>
@@ -43,6 +50,7 @@
             </div>
         </div>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -50,7 +58,9 @@
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/ee7e6d04c2.js"></script>
-    <script type="module" src = 'index.js'></script>
+    <script type="module" src='accept.js'></script>
+    <script>
+    </script>
 </body>
 
 </html>
