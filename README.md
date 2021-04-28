@@ -1,11 +1,11 @@
 # JsVanilla-ReactJs
 I, JSVanilla
-  1. quản lý sinh viên
+  1. student-management
   2. form validate
   3. verification otp code 
   4. loading scroll data
 II, Reactjs
-   mern-app memories
+   chat-app
 
 ###################
 1.Thanks for following me , i still update my project with 
