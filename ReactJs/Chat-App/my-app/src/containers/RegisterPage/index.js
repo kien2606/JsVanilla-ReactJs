@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import Layout from "../../components/layouts";
-import { userSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { signup } from "../../app/reducers/auth.slice";
 
 import "./style.css";
+import { Redirect } from "react-router";
 export default function Register() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   function registerUser(e) {
     e.preventDefault();
@@ -19,6 +21,9 @@ export default function Register() {
       password,
     };
     dispatch(signup(user));
+  }
+  if (auth.accepted) {
+    return <Redirect to={"/"} />;
   }
   return (
     <Layout>
