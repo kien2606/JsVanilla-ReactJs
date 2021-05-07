@@ -10,7 +10,7 @@ I, JSVanilla
 
 
 II, Reactjs 
-   1 . Chat-App (update 5/5 ) (65% process)
+   1 . Chat-App (update 7/5 ) (75% process)
    
 
 ###################
