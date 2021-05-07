@@ -47,12 +47,14 @@ export const signup = (user) => {
           })
           .then(() => {
             db.collection("users")
-              .add({
+              .doc(data.user.uid)
+              .set({
                 firstName: user.firstName,
                 lastName: user.lastName,
                 email: user.email,
                 uid: data.user.uid,
                 createAt: new Date(),
+                isOnline: true,
               })
               .then(() => {
                 const loggedUser = {
@@ -90,27 +92,36 @@ export const isLoggedIn = () => {
 
 ///////////////////////////////action logout//////////////////////////////////////////
 
-export const logout = () => {
+export const logout = (uid) => {
   return async (dispatch) => {
     dispatch(LOGOUT_REQUEST());
-    firebase
-      .auth()
-      .signOut()
-      .then(() => {
-        const initialValue = {
-          firstName: "",
-          lastName: "",
-          email: "",
-          accepted: false,
-          error: null,
-        };
-        dispatch(LOGOUT_SUCCEEDED(initialValue));
-        localStorage.clear();
+    const db = firebase.firestore();
+    db.collection("users")
+      .doc(uid)
+      .update({
+        isOnline: false,
       })
-      .catch((error) => {
-        console.log(error);
-        dispatch(LOGOUT_FAILED(error));
-      });
+      .then(() => {
+        firebase
+          .auth()
+          .signOut()
+          .then(() => {
+            const initialValue = {
+              firstName: "",
+              lastName: "",
+              email: "",
+              accepted: false,
+              error: null,
+            };
+            dispatch(LOGOUT_SUCCEEDED(initialValue));
+            localStorage.clear();
+          })
+          .catch((error) => {
+            console.log(error);
+            dispatch(LOGOUT_FAILED(error));
+          });
+      })
+      .catch((error) => console.log(error.message));
   };
 };
 
@@ -135,6 +146,7 @@ const authReducer = createSlice({
         state.firstName = action.payload.firstName;
         state.lastName = action.payload.lastName;
         state.email = action.payload.email;
+        state.uid = action.payload.uid;
       }
     },
     LOGGIN_FAILED: (state, action) => {
@@ -143,7 +155,7 @@ const authReducer = createSlice({
     },
     LOGOUT_REQUEST: (state, action) => {},
     LOGOUT_SUCCEEDED: (state, action) => {
-      return {...state , ...action.payload}
+      return { ...state, ...action.payload };
     },
     LOGOUT_FAILED: (state, action) => {
       state.error = action.payload;

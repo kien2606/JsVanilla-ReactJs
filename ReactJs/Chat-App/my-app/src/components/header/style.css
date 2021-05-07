@@ -5,3 +5,10 @@
 .item-log{
     padding: 0 40px;
 }
+.log-out{
+    margin : 0 auto;
+}
+.name-user{
+    width: 80%;
+    text-align: right;
+}

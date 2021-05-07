@@ -38,13 +38,13 @@ export default function Header() {
           <div className="name-user">
             {auth.accepted ? `Hello ${auth.firstName} ${auth.lastName}` : ""}
           </div>
-          <ul className="navbar-nav mr-auto">
+          <ul className="navbar-nav mr-auto log-out">
             {auth.accepted ? (
               <li className="nav-item active">
                 <Link
                   to={"#"}
                   onClick={() => {
-                    dispatch(logout());
+                    dispatch(logout(auth.uid));
                   }}
                 >
                   Log out
