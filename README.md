@@ -10,7 +10,8 @@ I, JSVanilla
 
 
 II, Reactjs 
-   1 . Chat-App (update 7/5 ) (75% process)
+   1 . Chat-App (done)
+   2. gmail (start : 10/5)
    
 
 ###################
