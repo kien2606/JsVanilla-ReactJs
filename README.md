@@ -11,7 +11,10 @@ I, JSVanilla
 
 II, Reactjs 
    1. Chat-App (done : 10/5 with basic testing)
-   2. gmail (start : 10/5)
+      - công nghệ sử dụng : reactjs , react-redux ( redux-toolkit ) , firebase
+      - tính năng : mỗi 1 tài khoản được đăng kí sẽ là 1 user , được nhìn thấy bởi tất cả những user khác đã đăng kí trước đó trong dữ liệu của firebase .
+      mỗi 1 tài khoản có thể thao tác chat với tất cả các user đã đăng kí . có hiển thị online , offline với từng user.
+   3. gmail (start : 10/5)
    
 
 ###################
