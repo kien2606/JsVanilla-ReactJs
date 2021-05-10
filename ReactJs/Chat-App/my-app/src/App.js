@@ -2,7 +2,7 @@ import React, { useEffect, lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PrivateRouter from "./components/PrivateRouter";
 import { useSelector, useDispatch } from "react-redux";
-import { isLoggedIn } from "./app/reducers/auth.slice";
+import { isLoggedIn, logout } from "./app/reducers/auth.slice";
 import Loading from "./components/loading";
 import "./App.css";
 
@@ -18,6 +18,9 @@ function App() {
       dispatch(isLoggedIn());
     }
   });
+  window.onbeforeunload = () =>{
+    dispatch(logout(auth.uid));
+  }
   return (
     <Suspense fallback= {<Loading />}>
       <div className="App">

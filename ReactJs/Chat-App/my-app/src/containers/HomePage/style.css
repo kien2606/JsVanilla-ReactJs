@@ -59,6 +59,7 @@
     height: 50px;
     overflow: hidden;
     border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .displayName .displayPic img{
@@ -82,4 +83,25 @@
     overflow-x: hidden;
     position: relative;
     top: 40px;
+}
+.online-status{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #16e316;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 #16e316;
+    align-self: center;
+}
+.online-status.off{
+    background-color: green;
+    box-shadow: 0 0 0 0;
+    align-self: center;
+}
+.wrap-userinfor{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding-left: 10px;
+    margin: 0 10px;
 }

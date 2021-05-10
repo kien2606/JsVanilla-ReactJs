@@ -10,17 +10,26 @@ export const signin = (user) => {
       .auth()
       .signInWithEmailAndPassword(user.email, user.password)
       .then((data) => {
-        const name = data.user.displayName.split(" ");
-        const firstName = name[0];
-        const lastName = name[1];
-        const loggedUser = {
-          firstName,
-          lastName,
-          email: user.email,
-          uid: data.user.uid,
-        };
-        localStorage.setItem("user", JSON.stringify(loggedUser));
-        dispatch(LOGIN_SUCCEEDED(loggedUser));
+        const db = firebase.firestore();
+        db.collection("users")
+          .doc(data.user.uid)
+          .update({
+            isOnline: true,
+          })
+          .then(() => {
+            const name = data.user.displayName.split(" ");
+            const firstName = name[0];
+            const lastName = name[1];
+            const loggedUser = {
+              firstName,
+              lastName,
+              email: user.email,
+              uid: data.user.uid,
+            };
+            sessionStorage.setItem("user", JSON.stringify(loggedUser));
+            dispatch(LOGIN_SUCCEEDED(loggedUser));
+          })
+          .catch((error) => error.message);
       })
       .catch((error) => {
         console.log(error.message);
@@ -63,7 +72,7 @@ export const signup = (user) => {
                   email: user.email,
                   uid: data.user.uid,
                 };
-                localStorage.setItem("user", JSON.stringify(loggedUser));
+                sessionStorage.setItem("user", JSON.stringify(loggedUser));
                 dispatch(LOGIN_SUCCEEDED(loggedUser));
               });
           });
@@ -79,8 +88,8 @@ export const signup = (user) => {
 
 export const isLoggedIn = () => {
   return async (dispatch) => {
-    const user = localStorage.getItem("user")
-      ? JSON.parse(localStorage.getItem("user"))
+    const user = sessionStorage.getItem("user")
+      ? JSON.parse(sessionStorage.getItem("user"))
       : null;
     if (user) {
       dispatch(LOGIN_SUCCEEDED(user));
@@ -114,7 +123,7 @@ export const logout = (uid) => {
               error: null,
             };
             dispatch(LOGOUT_SUCCEEDED(initialValue));
-            localStorage.clear();
+            sessionStorage.clear();
           })
           .catch((error) => {
             console.log(error);
@@ -124,8 +133,9 @@ export const logout = (uid) => {
       .catch((error) => console.log(error.message));
   };
 };
+/////////////////////////////////////////
 
-///////////////////////////////// reducer auth////////////////////////////////////////
+/////////////////////////////////auth slice////////////////////////////////////////
 
 const authReducer = createSlice({
   name: "auth",

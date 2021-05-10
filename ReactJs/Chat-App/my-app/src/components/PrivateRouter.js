@@ -1,12 +1,13 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 export default function PrivateRouter({ component: Component, ...rest }) {
+  
   return (
     <Route
       {...rest}
       component={(props) => {
-        const user = localStorage.getItem("user")
-          ? JSON.parse(localStorage.getItem("user"))
+        const user = sessionStorage.getItem("user")
+          ? JSON.parse(sessionStorage.getItem("user"))
           : null;
         if(user){
           return <Component {...props} />
