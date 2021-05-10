@@ -10,7 +10,7 @@ I, JSVanilla
 
 
 II, Reactjs 
-   1 . Chat-App (done)
+   1. Chat-App (done : 10/5 with basic testing)
    2. gmail (start : 10/5)
    
 
