@@ -14,7 +14,7 @@ II, Reactjs
       - công nghệ sử dụng : reactjs , react-redux ( redux-toolkit ) , firebase
       - tính năng : mỗi 1 tài khoản được đăng kí sẽ là 1 user , được nhìn thấy bởi tất cả những user khác đã đăng kí trước đó trong dữ liệu của firebase .
       mỗi 1 tài khoản có thể thao tác chat với tất cả các user đã đăng kí . có hiển thị online , offline với từng user.
-   3. gmail (start : 10/5)
+   3. gmail (update 13/5 ... process : 15% (make ui))
    
 
 ###################
