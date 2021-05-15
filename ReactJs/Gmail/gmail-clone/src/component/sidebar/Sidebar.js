@@ -61,7 +61,7 @@ function Sidebar() {
       <SidebarOption
         title="Xem thêm"
         Icon={ExpandMoreIcon}
-        number="2"
+        // number="2"
         selected={false}
       />
       <div className="sidebar__footer">

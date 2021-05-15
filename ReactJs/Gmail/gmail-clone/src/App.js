@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Header from "./component/header/Header";
 import Sidebar from "./component/sidebar/Sidebar";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Mail from "./pages/mail/Mail";
 import EmailList from "./pages/emaillist/EmailList";
 

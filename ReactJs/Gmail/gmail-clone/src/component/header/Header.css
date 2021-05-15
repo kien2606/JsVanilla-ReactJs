@@ -19,7 +19,7 @@
 .header__middle {
     display: flex;
     align-items: center;
-    flex: 0.7 1 auto;
+    flex: 0.7;
     background-color: whitesmoke;
     padding: 5px;
     border-radius: 5px;
