@@ -14,13 +14,21 @@ import PrintIcon from "@material-ui/icons/Print";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { IconButton } from "@material-ui/core";
 import { useHistory } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
+import { selectedMail, selectedOpenMail } from "../../features/mailSlice";
 function Mail() {
   const history = useHistory();
+  const selectedMailSingle = useSelector(selectedOpenMail);
+  const dispatch = useDispatch();
+  const returnEmailList = () => {
+    dispatch(selectedMail(null));
+    history.push("/");
+  };
   return (
     <div className="mail">
       <div className="mail__tools">
         <div className="mail__toolleft">
-          <IconButton onClick={() => history.push("/")}>
+          <IconButton onClick={returnEmailList}>
             <ArrowBackIcon />
           </IconButton>
           <IconButton>
@@ -58,6 +66,19 @@ function Mail() {
           <IconButton>
             <ExitToAppIcon />
           </IconButton>
+        </div>
+      </div>
+      <div className="mail__body">
+        <div className="mail__bodyheader">
+          <h2>{selectedMailSingle ? selectedMailSingle.subject : ""}</h2>
+          <LabelImportantIcon className="mail__important" />
+          <p>{selectedMailSingle ? selectedMailSingle.title : ""}</p>
+          <p className="mail__time">
+            {selectedMailSingle ? selectedMailSingle.time : ""}
+          </p>
+        </div>
+        <div className="mail__message">
+          <p>{selectedMailSingle ? selectedMailSingle.description : ""}</p>
         </div>
       </div>
     </div>

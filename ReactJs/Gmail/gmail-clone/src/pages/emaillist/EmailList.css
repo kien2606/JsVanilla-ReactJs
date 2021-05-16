@@ -1,21 +1,33 @@
-.emaillist{
-    flex: 1;
-    overflow: scroll;
-    padding-left: 35px;
+.emaillist {
+  flex: 1;
+  overflow: scroll;
+  padding-left: 35px;
 }
-.emaillist__settings{
-    position: sticky;
-    display: flex;
-    justify-content: space-between;
-    top: 0;
-    border-bottom: 1px solid whitesmoke;
-    z-index: 999;
-    padding-right: 10px;
+.emaillist__settings {
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  border-bottom: 1px solid whitesmoke;
+  z-index: 999;
+  padding-right: 10px;
 }
-.emaillist__sections{
-    position: sticky;
-    top: 0;
-    display: flex;
-    border-bottom: 1px solid whitesmoke;
-    z-index: 999;
+.emaillist__sections {
+  position: sticky;
+  top: 0;
+  display: flex;
+  border-bottom: 1px solid whitesmoke;
+  z-index: 999;
+}
+.emaillist__list {
+  padding-bottom: 20px;
+}
+/* hide scrollbar for chome */
+.emaillist::-webkit-scrollbar {
+  display: none;
+}
+/* hide scrollbar for ie and firefox */
+.emaillist {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
