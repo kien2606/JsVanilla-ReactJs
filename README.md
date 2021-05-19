@@ -16,7 +16,7 @@ II, Reactjs
       mỗi 1 tài khoản có thể thao tác chat với tất cả các user đã đăng kí . có hiển thị online , offline với từng user.
    2. gmail (done)
     - link demo : https://clone-2c975.web.app/
-   
+   3. google (starting : 19/5 ) 
 
 ###################
 1.Thanks for following me , i still update my project with 
