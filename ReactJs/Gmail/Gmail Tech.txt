@@ -1,0 +1,3 @@
+-reactjs : react-hook , react-router , react-redux (redux-toolkit)
+-ui : material ui
+-db : firebase for server and for deploying

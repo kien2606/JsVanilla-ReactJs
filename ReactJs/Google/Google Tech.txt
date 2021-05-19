@@ -1,0 +1,4 @@
+- reactjs : context api(redux ) , react-router , react-hook and make own custom hook with react
+- ui : material ui 
+- google custom search api
+- db : fire to connect  to google  , firebase hosting to deploy 
