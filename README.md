@@ -14,7 +14,7 @@ II, Reactjs
     - it's not demo link here , i'll uptade soon , now you can download to review my code . thanks
    2. gmail (done)
     - link demo : https://clone-2c975.web.app/
-   3. google (starting : 19/5 ) 
+   3. google (i've done my code but i get error 429 code status http ( that means I have limited searches per day , you can clone resource code and mock api " search engine API google" to test in develop enviroment  ) 
 
 ###################
 1.Thanks for following me , i still update my project with 
