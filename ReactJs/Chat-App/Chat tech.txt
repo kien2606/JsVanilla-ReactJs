@@ -1,0 +1,3 @@
+-reactjs : react-hook , react-router , react-redux (redux-toolkit)
+-ui : bootrap4
+-db : firebase for server and not deploying
